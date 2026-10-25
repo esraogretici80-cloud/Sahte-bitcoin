@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Recovery Portal</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;background:#090909;color:#f2eeee;
+ font-family:Arial,sans-serif;display:grid;place-items:center;padding:18px
+}
+.card{
+ width:100%;max-width:440px;background:#180909;
+ border:1px solid #852020;border-radius:12px;padding:24px;
+ box-shadow:0 0 35px #ff000018
+}
+.brand{color:#ff4141;font-size:12px;letter-spacing:3px}
+h1{font-size:28px;color:#ff4141;margin:16px 0}
+p{line-height:1.6;color:#d4bcbc}
+.amount{
+ margin:22px 0;padding:22px 12px;text-align:center;
+ background:#100505;border:1px solid #512020;border-radius:8px
+}
+.amount small{color:#ba9999;letter-spacing:2px}
+.price{font-size:44px;font-weight:bold;margin:10px;color:white}
+button{
+ width:100%;padding:16px;border:0;border-radius:6px;
+ background:#e9b62e;color:#1b1200;font-weight:bold;font-size:16px
+}
+.fine{font-size:11px;color:#a58c8c;text-align:center;margin-top:18px}
+#reveal{text-align:center}
+#reveal h1{color:#00ff88;font-size:32px}
+#reveal .emoji{font-size:58px}
+</style>
+</head>
+<body>
+<main class="card" id="payment">
+ <div class="brand">RECOVERY PORTAL // 04-A7</div>
+ <h1>ÖDEME EKRANI</h1>
+ <p>Oturumun devam etmesi için aşağıdaki simüle edilmiş tutarı incele.</p>
+ <div class="amount">
+  <small>GÖSTERİM TUTARI</small>
+  <div class="price">300 TL</div>
+  <small>SADECE DEMO</small>
+ </div>
+ <button onclick="showPrank()">ÖDE</button>
+ <p class="fine">Bu bir şaka simülasyonudur. Gerçek ödeme alınmaz.</p>
+</main>
+
+<main class="card" id="reveal" hidden>
+ <div class="emoji">😂</div>
+ <h1>ŞAKALANDIN DOSTUM!</h1>
+ <p>Hepsi bir şakaydı! Hiçbir ödeme yapılmadı, hiçbir dosyan değiştirilmedi veya şifrelenmedi.</p>
+ <p class="fine">Şaka tamamlandı • 0 TL tahsil edildi</p>
+</main>
+
+<script>
+function showPrank(){
+ document.getElementById('payment').hidden=true;
+ document.getElementById('reveal').hidden=false;
+ document.title='Şakalandın dostum!';
+}
+</script>
+</body>
+</html>
